@@ -12,8 +12,14 @@ Compress images, gifs, video, and audio to a target file size with ffmpeg.
 
 ## Install
 
+Install from repo:
 ```
 pip install -e .
+```
+
+Install from PyPI:
+```
+pip install cli-compress
 ```
 
 This gives you a `compress` command on Windows, Linux, and macOS.
