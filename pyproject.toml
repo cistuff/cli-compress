@@ -1,0 +1,25 @@
+[project]
+name = "cli-compress"
+version = "0.1.0"
+description = "Compress images, gifs, video, and audio to a target file size using ffmpeg."
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT"
+authors = [
+    { name = "your name", email = "maximus.sandone@gmail.com" },
+]
+classifiers = [
+    "Environment :: Console",
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+[project.scripts]
+compress = "compress:main"
+
+[tool.setuptools]
+py-modules = ["compress"]
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
