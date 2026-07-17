@@ -1,8 +1,0 @@
-README.md
-compress.py
-pyproject.toml
-cli_compress.egg-info/PKG-INFO
-cli_compress.egg-info/SOURCES.txt
-cli_compress.egg-info/dependency_links.txt
-cli_compress.egg-info/entry_points.txt
-cli_compress.egg-info/top_level.txt

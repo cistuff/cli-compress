@@ -6,7 +6,7 @@ readme = "README.md"
 requires-python = ">=3.8"
 license = "MIT"
 authors = [
-    { name = "your name", email = "maximus.sandone@gmail.com" },
+    { name = "Max S", email = "maxs002929@gmail.com" },
 ]
 classifiers = [
     "Environment :: Console",

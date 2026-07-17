@@ -160,11 +160,21 @@ def compress_audio(input_path: Path, output_path: Path, target_bytes: int) -> in
     return output_path.stat().st_size
 
 
+def open_file(path: Path):
+    if sys.platform == 'win32':
+        os.startfile(path)  # noqa: only exists on windows
+    elif sys.platform == 'darwin':
+        subprocess.run(['open', str(path)])
+    else:
+        subprocess.run(['xdg-open', str(path)])
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument('input', type=Path, help='file to compress')
     ap.add_argument('-s', '--size', required=True, help='target size, e.g. 10mb, 1gb, 3kb, 500k')
     ap.add_argument('-o', '--output', type=Path, help='output path (default: <name>_compressed.<ext>)')
+    ap.add_argument('--no-open', action='store_true', help="don't open the result when done")
     args = ap.parse_args()
 
     require_tools()
@@ -204,6 +214,9 @@ def main():
     else:
         note = ""
     print(f"done: {final_size:,} bytes ({final_size / target_bytes * 100:.0f}% of target){note}")
+
+    if not args.no_open:
+        open_file(output)
 
 
 if __name__ == '__main__':
