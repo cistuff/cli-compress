@@ -8,7 +8,7 @@ Compress images, gifs, video, and audio to a target file size with ffmpeg.
 - ffmpeg + ffprobe on PATH
   - macOS: `brew install ffmpeg`
   - Linux: `sudo apt install ffmpeg`
-  - Windows: `winget install ffmpeg`
+  - Windows: `winget install ffmpeg` and add to PATH
 
 ## Install
 
@@ -22,16 +22,16 @@ Install from PyPI:
 pip install cli-compress
 ```
 
-This gives you a `compress` command on Windows, Linux, and macOS.
+This gives you a `python -m compress` command on Windows, Linux, and macOS.
 
 ## Usage
 
 ```
-compress input.mp4 -s 10mb
-compress photo.png -s 200kb
-compress meme.gif -s 3mb
-compress song.wav -s 5mb
-compress video.mov -s 1gb -o out.mp4
+python -m compress input.mp4 -s 10mb
+python -m compress photo.png -s 200kb
+python -m compress meme.gif -s 3mb
+python -m compress song.wav -s 5mb
+python -m compress video.mov -s 1gb -o out.mp4
 ```
 
 - `-s/--size` accepts `kb`, `mb`, `gb` (also `kib`/`mib`/`gib`, same thing) or a raw byte count.
